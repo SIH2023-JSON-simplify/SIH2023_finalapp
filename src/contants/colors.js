@@ -1,5 +1,6 @@
 const colors = {
     primary: '#CC8636',
+    back:"#F1E8DC",
     btnBack: '#08A4A4',
     white: '#FFFFFF',
     black: '#000000',

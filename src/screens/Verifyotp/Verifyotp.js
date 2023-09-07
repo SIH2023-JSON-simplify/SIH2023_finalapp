@@ -70,43 +70,37 @@ function OtpScreen(props) {
 
     // }, [])
 
-    const sendOtpAgain = () => {
+    // const sendOtpAgain = () => {
 
-        // navigation.navigate('OtpScreen')
-        let formdata = new FormData();
-        formdata.append('phone', getResData.phone);
-        formdata.append('country_code', '91');
-        formdata.append('action', action);
+    //     // navigation.navigate('OtpScreen')
+    //     let formdata = new FormData();
+    //     formdata.append('phone', getResData.phone);
+    //     formdata.append('country_code', '91');
+    //     formdata.append('action', action);
 
-        showLoader(true)
-        setOtp('')
-        console.log('-----------formdata:: ', formdata);
-        Helper.makeRequest({ url: ApiUrl.sendOtp, data: formdata, method: "FORMDATA" }).then((data) => {
-            hideLoader(false)
-            console.log('-----------res:: ', data);
-            if (data.status === "success") {
+    //     showLoader(true)
+    //     setOtp('')
+    //     console.log('-----------formdata:: ', formdata);
+    //     Helper.makeRequest({ url: ApiUrl.sendOtp, data: formdata, method: "FORMDATA" }).then((data) => {
+    //         hideLoader(false)
+    //         console.log('-----------res:: ', data);
+    //         if (data.status === "success") {
                
-                Helper.showToast(data.message);
-                // navigation.navigate('OtpScreen', { resData: data.data, providerKey: 1 })
-                // navigation.reset({
-                //     routes: [{
-                //         name: "OtpScreen",
-                //         params: { resData: data.data, providerKey: "phone" }
-                //     }],
-                // });
-            } else {
-                Helper.showToast(data.message)
+    //             Helper.showToast(data.message);
+    //            navigation.navigate("TabNavigator")
+    //         } else {
+    //             Helper.showToast(data.message)
                
-              //  Helper.showToast(data.message)
-                hideLoader(false)
-            }
-            // Helper.showToast(data.message)
-        }).catch(err => {
-            console.log("----err::: ", err)
-            // Helper.showToast(err.message)
-            hideLoader(false)
-        })
-    }
+    //           //  Helper.showToast(data.message)
+    //             hideLoader(false)
+    //         }
+    //         // Helper.showToast(data.message)
+    //     }).catch(err => {
+    //         console.log("----err::: ", err)
+    //         // Helper.showToast(err.message)
+    //         hideLoader(false)
+    //     })
+    // }
 
 
     const otpInApi = () => {
@@ -123,99 +117,90 @@ function OtpScreen(props) {
         //     return;
         // }
 
-        let formdata = new FormData();
-        formdata.append('provider_type', providerType === 1 ? 'phone' : 'email');
-        formdata.append('provider_id', getResData?.phone);
-        formdata.append('country_code', providerType === 1 ? getResData?.country_code : '');
-        formdata.append('device_type', Platform.OS == 'ios' ? 'ios' : 'android');
-        formdata.append('provider_verification', otp);
-        formdata.append('fcm_id', FCMtoken)
-
+        const body ={
+            mobile_no : number,
+            otp:otp
+        }
         showLoader(true)
-        console.log('-----------formdata:: ', formdata);
-        Helper.makeRequest({ url: ApiUrl.LOGIN, data: formdata, method: "FORMDATA" }).then((data) => {
+        console.log('-----------formdata:: ', body);
+        Helper.makeRequest({ url: ApiUrl.verifyotp, data: body, method: "POST" }).then((data) => {
             hideLoader(false)
-            if (data.message !== 'Doctor login successfully !') {
-                Helper.showToast(data.message)
-               
-                
-                //Helper.showToast(data.message)
-            }
-            console.log('-----------res:: ', data.data.step);
             if (data.status === "success") {
-                Helper.setData('userdata', data.data);
-                Helper.setData('token', data.data.token);
-                if (data.data.step === 1) {
-                    navigation.reset({
-                        routes: [{ name: "OnboardingScreen1", params: { getResData: getResData }}],
-                        //routes: [{ name: "TabNavigator" }],
-                        //routes: [{ name: "TermsAndConditions" }],
-                        //routes: [{ name: "OnboardingScreen1" }],
-                    });
-                    return;
-                } else if (data.data.step === 2) {
-                    navigation.reset({
-                        index: 0,
-                        // routes: [{ name: "OnboardingScreen2" }],
-                        routes: [{ name: "TabNavigator" }],
-                    });
-                    return;
-                } else if (data.data.step === 3) {
-                    navigation.reset({
-                        index: 0,
-                        // routes: [{ name: "OnboardingScreen3" }],
-                        routes: [{ name: "TabNavigator" }],
-                    });
-                    return;
-                } else if (data.data.step === 4) {
-                    navigation.reset({
-                        index: 0,
-                        // routes: [{ name: "OnboardingScreen4" }],
-                        routes: [{ name: "TabNavigator" }],
-                    });
-                    return;
-                } else if (data.data.step === 5) {
-                    navigation.reset({
-                        index: 0,
-                        // routes: [{ name: "OnboardingScreen5" }],
-                        routes: [{ name: "TabNavigator" }],
-                    });
-                    return;
-                } else if (data.data.step === 6) {
-                    navigation.reset({
-                        index: 0,
-                        // routes: [{ name: "OnboardingScreen6" }],
-                        routes: [{ name: "TabNavigator" }],
-                    });
-                    return;
-                } else if (data.data.step === 7) {
-                    navigation.reset({
-                        index: 0,
-                        // routes: [{ name: "OnboardingScreen7" }],
-                        routes: [{ name: "TabNavigator" }],
-                    });
-                    return;
-                } else if (data.data.step === 8) {
-                    navigation.reset({
-                        index: 0,
-                        // routes: [{ name: "OnboardingScreen8" }],
-                        routes: [{ name: "TabNavigator" }],
-                    });
-                    return;
-                } else if (data.data.step === 9) {
-                    navigation.reset({
-                        index: 0,
-                        // routes: [{ name: "OnboardingScreen9" }],
-                        routes: [{ name: "TabNavigator" }],
-                    });
-                    return;
-                } else if (data.data.step === 10) {
-                    navigation.reset({
-                        index: 0,
-                        routes: [{ name: "TabNavigator" }],
-                    });
-                    return;
-                }
+                Helper.setData('token', data.authToken.access);
+                console.log("token is " ,Helper.getData("token"));
+                Helper.setData('userdata', data);
+                navigation.navigate("TabNavigator")
+            //    { if (data.data.step === 1) {
+            //         navigation.reset({
+            //             routes: [{ name: "OnboardingScreen1", params: { getResData: getResData }}],
+            //             //routes: [{ name: "TabNavigator" }],
+            //             //routes: [{ name: "TermsAndConditions" }],
+            //             //routes: [{ name: "OnboardingScreen1" }],
+            //         });
+            //         return;
+            //     } else if (data.data.step === 2) {
+            //         navigation.reset({
+            //             index: 0,
+            //             // routes: [{ name: "OnboardingScreen2" }],
+            //             routes: [{ name: "TabNavigator" }],
+            //         });
+            //         return;
+            //     } else if (data.data.step === 3) {
+            //         navigation.reset({
+            //             index: 0,
+            //             // routes: [{ name: "OnboardingScreen3" }],
+            //             routes: [{ name: "TabNavigator" }],
+            //         });
+            //         return;
+            //     } else if (data.data.step === 4) {
+            //         navigation.reset({
+            //             index: 0,
+            //             // routes: [{ name: "OnboardingScreen4" }],
+            //             routes: [{ name: "TabNavigator" }],
+            //         });
+            //         return;
+            //     } else if (data.data.step === 5) {
+            //         navigation.reset({
+            //             index: 0,
+            //             // routes: [{ name: "OnboardingScreen5" }],
+            //             routes: [{ name: "TabNavigator" }],
+            //         });
+            //         return;
+            //     } else if (data.data.step === 6) {
+            //         navigation.reset({
+            //             index: 0,
+            //             // routes: [{ name: "OnboardingScreen6" }],
+            //             routes: [{ name: "TabNavigator" }],
+            //         });
+            //         return;
+            //     } else if (data.data.step === 7) {
+            //         navigation.reset({
+            //             index: 0,
+            //             // routes: [{ name: "OnboardingScreen7" }],
+            //             routes: [{ name: "TabNavigator" }],
+            //         });
+            //         return;
+            //     } else if (data.data.step === 8) {
+            //         navigation.reset({
+            //             index: 0,
+            //             // routes: [{ name: "OnboardingScreen8" }],
+            //             routes: [{ name: "TabNavigator" }],
+            //         });
+            //         return;
+            //     } else if (data.data.step === 9) {
+            //         navigation.reset({
+            //             index: 0,
+            //             // routes: [{ name: "OnboardingScreen9" }],
+            //             routes: [{ name: "TabNavigator" }],
+            //         });
+            //         return;
+            //     } else if (data.data.step === 10) {
+            //         navigation.reset({
+            //             index: 0,
+            //             routes: [{ name: "TabNavigator" }],
+            //         });
+            //         return;
+            //     }}
             } else {
              //   Helper.showToast(data.message)
             Helper.showToast(data.message)
@@ -286,15 +271,15 @@ function OtpScreen(props) {
                     </View>
                     <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
                         <Text style={[styles.Resend, { marginHorizontal: 2 }]}>{'Did not recieved OTP ?'}</Text>
-                        <Text onPress={sendOtpAgain} style={[styles.Resend, { color: colors.primary }]}>Resend OTP</Text>
+                        <Text onPress={()=>navigation.navigate("TabNavigator")} style={[styles.Resend, { color: colors.primary }]}>Resend OTP</Text>
                     </View>
                     <View style={{ marginTop: Utils.ScreenWidth(7), }}>
                         <TouchableOpacity
                             activeOpacity={0.5}
                             onPress={() => 
                                 // {navigation.navigate("H")}
-                                {navigation.navigate("TabNavigator")}
-                                // otpInApi()
+                                // {navigation.navigate("TabNavigator")}
+                                otpInApi()
                             }
                             style={{ flexDirection: 'row', justifyContent: 'center', width: Utils.ScreenWidth(90), backgroundColor: colors.primary, height: Utils.ScreenHeight(7), borderRadius: 13 }}>
                             <View style={[styles.titleViewCss, { width: Utils.ScreenWidth(45) }]}>

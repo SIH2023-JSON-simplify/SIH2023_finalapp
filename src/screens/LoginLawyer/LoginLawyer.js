@@ -54,24 +54,23 @@ function SignInPhone(props) {
         formdata.append('phone', number);
         formdata.append('country_code', '91');
         formdata.append('action', 'login');
-
-        showLoader(true)
-        console.log('-----------formdata:: ', formdata);
-        Helper.makeRequest({ url: ApiUrl.sendOtp, data: formdata, method: "FORMDATA" }).then((data) => {
+        const body ={
+            "mobile_no": number,
+            "action":   "login",
+        }
+        // showLoader(true)
+        console.log('body ', formdata);
+        Helper.makeRequest({ url: ApiUrl.generateotp, data: body, method: "POST" }).then((data) => {
             hideLoader(false)
             console.log('-----------res:: ', data);
+            navigation.navigate("Verifyotp",{phno:number})
             if (data.status === "success") {
                 
                 Helper.showToast(data.message)
 
                // Helper.showToast(data.message);
-                navigation.navigate('OtpScreen', { resData: data.data, providerKey: 1, action: 'login' })
-                // navigation.reset({
-                //     routes: [{
-                //         name: "OtpScreen",
-                //         params: { resData: data.data, providerKey: "phone" }
-                //     }],
-                // });
+                
+              
             } else {
                 alert(data.message)
               //  Helper.showToast(data.message)
@@ -131,8 +130,10 @@ function SignInPhone(props) {
                         </View>
                         <TouchableOpacity
                             onPress={() => 
-                              // signInApi()
-                              {navigation.navigate("Verifyotp",{phno:number})}
+                              {
+                                signInApi()
+                            //   navigation.navigate("Verifyotp",{phno:number})
+                        }
                             }
                             activeOpacity={0.5}
                             style={{ flexDirection: 'row', justifyContent: 'center', width: Utils.ScreenWidth(90), backgroundColor: colors.primary, height: Utils.ScreenHeight(7), borderRadius: 13, marginTop: Utils.ScreenHeight(3) }}>
@@ -154,6 +155,8 @@ function SignInPhone(props) {
             </ScrollView>
             {/* <Toast/>
             <CustomLoader loaderVisible={loaderVisible} /> */}
+            <TouchableOpacity onPress={()=>
+            {navigation.navigate("Verifyotp",{phno:number})}}><Text>testings</Text></TouchableOpacity>
         </SafeAreaView>
     )
 }

@@ -6,6 +6,9 @@ import LoginLawyer from '../screens/LoginLawyer/LoginLawyer';
 import SignupLawyer from '../screens/SignupLawyer/SignupLawyer';
 import Verifyotp from '../screens/Verifyotp/Verifyotp';
 import TabNavigator from './TabNavigator';
+import Notification from '../screens/Notification/Notification';
+import Settings from '../screens/Settings/Settings';
+
 
 
 
@@ -23,7 +26,12 @@ function Navigation() {
                 <Stack.Screen name="LoginLawyer" component={LoginLawyer} />
                 <Stack.Screen name="SignupLawyer" component={SignupLawyer} />
                 <Stack.Screen name="Verifyotp" component={Verifyotp} />
-                <Stack.Screen name="TabNavigator" component={TabNavigator} />
+                <Stack.Screen name="Notification" component={Notification} />
+                <Stack.Screen
+                name="Settings" component={Settings} />
+                <Stack.Screen 
+                options={{ gestureEnabled: false }}
+                name="TabNavigator" component={TabNavigator} />
 
                 
 

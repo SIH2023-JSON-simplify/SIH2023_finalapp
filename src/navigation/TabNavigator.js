@@ -6,7 +6,7 @@ import { StyleSheet, View, Text, Image, Dimensions, TouchableOpacity } from 'rea
 import colors from '../contants/colors';
 import ImagesPath from '../assests/ImagesPath';
 
-import {  SideMenu } from '../screens/SideMenu';
+import { SideMenu } from '../screens/SideMenu';
 
 import { Utils } from '../contants';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
@@ -14,87 +14,89 @@ import Calendar from '../screens/Calendar/Calendar';
 import BareActs from '../screens/BareActs/BareActs';
 import Clients from '../screens/Clients/Clients';
 import { utils } from '@jest/reporters';
+import Navigation from './Navigation';
+import { useNavigation } from '@react-navigation/native';
 
 
 
 const Tab = createBottomTabNavigator();
 function TabNavigator() {
-  const RenderTabIcon = (props) => {
-    const { activeIcon, inActiveIcon, title, isFocused } = props;
-    return (
-        <View style={isFocused ? tabStyles.imgViewOfTabs : tabStyles.viewOfTabs}>
-            <Image
-                source={activeIcon}
-                style={[tabStyles.tabIconCss, { tintColor: isFocused ? colors.primary : colors.grey, }]} />
-            <Text style={[{fontSize:12, marginTop:Utils.ScreenHeight(0.6)},{ color: isFocused ? colors.primary : colors.grey, }]}>{title}</Text>
-        </View>
-    );
-}
-const tabStyles = StyleSheet.create({
-  viewOfTabs: {
-      justifyContent: "center", alignItems: "center", marginTop: Utils.ScreenWidth(3)
-  },
-  imgViewOfTabs: {
-      width: 62, height: 33, borderRadius: 15,
-      justifyContent: "center", alignItems: "center", marginTop: Utils.ScreenWidth(3)
-  },
-  tabIconCss: {
-      width: 23, height: 23, resizeMode: "contain",
-  },
-});
+    const RenderTabIcon = (props) => {
+        const { activeIcon, inActiveIcon, title, isFocused } = props;
+        return (
+            <View style={isFocused ? tabStyles.imgViewOfTabs : tabStyles.viewOfTabs}>
+                <Image
+                    source={activeIcon}
+                    style={[tabStyles.tabIconCss, { tintColor: isFocused ? colors.primary : colors.grey, }]} />
+                <Text style={[{ fontSize: 12, marginTop: Utils.ScreenHeight(0.6) }, { color: isFocused ? colors.primary : colors.grey, }]}>{title}</Text>
+            </View>
+        );
+    }
+    const tabStyles = StyleSheet.create({
+        viewOfTabs: {
+            justifyContent: "center", alignItems: "center", marginTop: Utils.ScreenWidth(3)
+        },
+        imgViewOfTabs: {
+            width: 62, height: 33, borderRadius: 15,
+            justifyContent: "center", alignItems: "center", marginTop: Utils.ScreenWidth(3)
+        },
+        tabIconCss: {
+            width: 23, height: 23, resizeMode: "contain",
+        },
+    });
+    const navigation = useNavigation()
     return (
         <Tab.Navigator
             screenOptions={{
-              headerTitle:"",
-              headerLeft:() => {
-                return (
-                   <Text style={{color:colors.primary, fontSize:20, fontWeight:600, marginLeft:Utils.ScreenWidth(5)}}>LegalBridge</Text>
-                )
-            },
-            headerRight:()=>{
-              return(
-                <View style={{}}>
-                  <View style={{flexDirection:"row", justifyContent:"center", alignItems:"center", marginRight:Utils.ScreenWidth(5)}}>
-                    <TouchableOpacity>
-                  <Image source={ImagesPath.LegalBridge.bell} style={{resizeMode: 'contain',
-                    tintColor:colors.blackdark,
-
-
-                      height: Utils.ScreenWidth(6),
-                      width: Utils.ScreenWidth(6),
-                      marginRight:Utils.ScreenWidth(6)}} />
-                      </TouchableOpacity>
-                      <TouchableOpacity>
-                  <Image source={ImagesPath.LegalBridge.settings} style={{resizeMode: 'contain',
-                    tintColor:colors.blackdark,
-                      height: Utils.ScreenWidth(6),
-                      width: Utils.ScreenWidth(6),
-                      }} />
-                      </TouchableOpacity>
-                  </View>
-
-                </View>
-              )
-            },
-
-                headerShown: true,
-                tabBarStyle: {
-                  
-                    height: Utils.ScreenWidth(23),
-                    backgroundColor: colors.white,
-                    borderTopLeftColor: colors.inputColorP,
-                    borderTopRightColor: colors.inputColorP,
-                    borderTopLeftRadius: 10,
-                    borderTopRightRadius: 10,
-                    paddingHorizontal: Utils.ScreenWidth(3),
-                    
-
-                }
+                headerTitle: "",
+                tabBarStyle:{height:Utils.ScreenHeight(10), paddingTop:Utils.ScreenHeight(1)}
+             
             }}>
             <Tab.Screen
+
                 name="HomeScreen"
                 component={HomeScreen}
                 options={{
+                    headerTitle: "",
+                headerLeft: (title) => {
+                    return (
+                        <Text style={{ color: colors.primary, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>LegalBridge</Text>
+                    )
+                },
+                headerRight: () => {
+                    return (
+                        <View style={{}}>
+                            <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", marginRight: Utils.ScreenWidth(5) }}>
+                                <TouchableOpacity
+
+                                >
+                                    <Image source={ImagesPath.LegalBridge.bell} style={{
+                                        resizeMode: 'contain',
+                                        tintColor: colors.blackdark,
+
+
+                                        height: Utils.ScreenWidth(6),
+                                        width: Utils.ScreenWidth(6),
+                                        marginRight: Utils.ScreenWidth(6)
+                                    }} />
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    onPress={() => {
+                                        navigation.navigate("Settings")
+                                    }}>
+                                    <Image source={ImagesPath.LegalBridge.settings} style={{
+                                        resizeMode: 'contain',
+                                        tintColor: colors.blackdark,
+                                        height: Utils.ScreenWidth(6),
+                                        width: Utils.ScreenWidth(6),
+                                    }} />
+                                </TouchableOpacity>
+                            </View>
+
+                        </View>
+                    )
+                },
+                    headerShown: true,
                     tabBarLabel: '',
                     tabBarIcon: ({ focused }) => {
                         return (
@@ -113,11 +115,52 @@ const tabStyles = StyleSheet.create({
                 name="Calendar"
                 component={Calendar}
                 options={{
+                    headerTitle: "",
+                headerLeft: (title) => {
+                    return (
+                        <Text style={{ color: colors.black, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>Calendar</Text>
+                    )
+                },
+                headerRight: () => {
+                    return (
+                        <View style={{}}>
+                            <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", marginRight: Utils.ScreenWidth(5) }}>
+                                <TouchableOpacity
+
+                                >
+                                    <Image source={ImagesPath.LegalBridge.bell} style={{
+                                        resizeMode: 'contain',
+                                        tintColor: colors.blackdark,
+
+
+                                        height: Utils.ScreenWidth(6),
+                                        width: Utils.ScreenWidth(6),
+                                        marginRight: Utils.ScreenWidth(6)
+                                    }} />
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    onPress={() => {
+                                        navigation.navigate("Settings")
+                                    }}>
+                                    <Image source={ImagesPath.LegalBridge.settings} style={{
+                                        resizeMode: 'contain',
+                                        tintColor: colors.blackdark,
+                                        height: Utils.ScreenWidth(6),
+                                        width: Utils.ScreenWidth(6),
+                                    }} />
+                                </TouchableOpacity>
+                            </View>
+
+                        </View>
+                    )
+                },
+                    headerShown: true,
                     tabBarLabel: '',
+                    
                     tabBarIcon: ({ focused }) => {
                         return (
                             <RenderTabIcon
-                            title="Calender"
+                                title="Calender"
                                 isFocused={focused}
                                 activeIcon={ImagesPath.home.calender_icon}
                             // inActiveIcon={ImagesPath.Tabbar.bottom_k}
@@ -131,11 +174,50 @@ const tabStyles = StyleSheet.create({
                 name="BareActs"
                 component={BareActs}
                 options={{
+                    headerLeft: (title) => {
+                        return (
+                            <Text style={{ color: colors.black, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>Bare Acts</Text>
+                        )
+                    },
+                    headerRight: () => {
+                        return (
+                            <View style={{}}>
+                                <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", marginRight: Utils.ScreenWidth(5) }}>
+                                    <TouchableOpacity
+    
+                                    >
+                                        <Image source={ImagesPath.LegalBridge.bell} style={{
+                                            resizeMode: 'contain',
+                                            tintColor: colors.blackdark,
+    
+    
+                                            height: Utils.ScreenWidth(6),
+                                            width: Utils.ScreenWidth(6),
+                                            marginRight: Utils.ScreenWidth(6)
+                                        }} />
+                                    </TouchableOpacity>
+                                    <TouchableOpacity
+                                        onPress={() => {
+                                            navigation.navigate("Settings")
+                                        }}>
+                                        <Image source={ImagesPath.LegalBridge.settings} style={{
+                                            resizeMode: 'contain',
+                                            tintColor: colors.blackdark,
+                                            height: Utils.ScreenWidth(6),
+                                            width: Utils.ScreenWidth(6),
+                                        }} />
+                                    </TouchableOpacity>
+                                </View>
+    
+                            </View>
+                        )
+                    },
+                        headerShown: true,
                     tabBarLabel: '',
                     tabBarIcon: ({ focused }) => {
                         return (
                             <RenderTabIcon
-                            title="Bare Acts"
+                                title="Bare Acts"
                                 isFocused={focused}
                                 activeIcon={ImagesPath.home.man_icon}
                             // inActiveIcon={ImagesPath.Tabbar.bottom_k}
@@ -149,11 +231,50 @@ const tabStyles = StyleSheet.create({
                 name="Clients"
                 component={Clients}
                 options={{
+                    headerLeft: (title) => {
+                        return (
+                            <Text style={{ color: colors.black, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>Clients</Text>
+                        )
+                    },
+                    headerRight: () => {
+                        return (
+                            <View style={{}}>
+                                <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", marginRight: Utils.ScreenWidth(5) }}>
+                                    <TouchableOpacity
+    
+                                    >
+                                        <Image source={ImagesPath.LegalBridge.bell} style={{
+                                            resizeMode: 'contain',
+                                            tintColor: colors.blackdark,
+    
+    
+                                            height: Utils.ScreenWidth(6),
+                                            width: Utils.ScreenWidth(6),
+                                            marginRight: Utils.ScreenWidth(6)
+                                        }} />
+                                    </TouchableOpacity>
+                                    <TouchableOpacity
+                                        onPress={() => {
+                                            navigation.navigate("Settings")
+                                        }}>
+                                        <Image source={ImagesPath.LegalBridge.settings} style={{
+                                            resizeMode: 'contain',
+                                            tintColor: colors.blackdark,
+                                            height: Utils.ScreenWidth(6),
+                                            width: Utils.ScreenWidth(6),
+                                        }} />
+                                    </TouchableOpacity>
+                                </View>
+    
+                            </View>
+                        )
+                    },
+                        headerShown: true,
                     tabBarLabel: '',
                     tabBarIcon: ({ focused }) => {
                         return (
                             <RenderTabIcon
-                            title="Clients"
+                                title="Clients"
                                 isFocused={focused}
                                 activeIcon={ImagesPath.home.wallet_icon}
                             // inActiveIcon={ImagesPath.Tabbar.bottom_k}
@@ -163,11 +284,11 @@ const tabStyles = StyleSheet.create({
                     }
                 }}
             />
-            
+
         </Tab.Navigator>
     );
 
-    
+
 }
 
 export default TabNavigator;

@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
         // fontWeight: 'bold',
         borderWidth: 0.6,
         borderBottomWidth: 1,
-        color: '#008080',
+        color: colors.blackdark,
         shadowOffset: {
             width: 0,
             height: 2,

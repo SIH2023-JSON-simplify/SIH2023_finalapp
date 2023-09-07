@@ -25,9 +25,9 @@ const HomeScreen = () => {
             <TouchableOpacity>
                 <Image source={ImagesPath.LegalBridge.court1}
                     style={{ width: Utils.ScreenWidth(82), height: Utils.ScreenHeight(19), resizeMode: "contain" }} />
-
-
             </TouchableOpacity>
+
+
         )
     }
     const latest = ({ item }) => {
