@@ -17,7 +17,7 @@ function Navigation() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="SignupLawyer"
+                initialRouteName="LoginLawyer"
                 screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="Splash" component={Splash} />
                 <Stack.Screen name="LoginLawyer" component={LoginLawyer} />
