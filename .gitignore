@@ -39,9 +39,7 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
-package-lock.json
-metro.config.js
-package.json
+
 
 # TO ADD A FILE IN GITIGNORE USE git rm --cached metro.config.js 
 # (use "git restore --staged <file>..." to unstage)
