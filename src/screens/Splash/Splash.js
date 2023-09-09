@@ -10,7 +10,7 @@ const Splash = () => {
   const navigation = useNavigation();
   useEffect(()=>{
     setTimeout(() => {
-      navigation.navigate("LoginLawyer")
+      navigation.navigate("IntroScreen")
     }, 3000);
   },[])
   return (

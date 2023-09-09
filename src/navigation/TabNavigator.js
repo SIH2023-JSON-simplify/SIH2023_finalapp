@@ -10,7 +10,7 @@ import { SideMenu } from '../screens/SideMenu';
 
 import { Utils } from '../contants';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
-import Calendar from '../screens/Calendar/Calendar';
+import CalendarScreen from '../screens/Calendar/CalendarScreen';
 import BareActs from '../screens/BareActs/BareActs';
 import Clients from '../screens/Clients/Clients';
 import { utils } from '@jest/reporters';
@@ -27,7 +27,7 @@ function TabNavigator() {
             <View style={isFocused ? tabStyles.imgViewOfTabs : tabStyles.viewOfTabs}>
                 <Image
                     source={activeIcon}
-                    style={[tabStyles.tabIconCss, { tintColor: isFocused ? colors.primary : colors.grey, }]} />
+                    style={[tabStyles.tabIconCss, { tintColor: isFocused ? colors.black : colors.grey, }]} />
                 <Text style={[{ fontSize: 12, marginTop: Utils.ScreenHeight(0.6) }, { color: isFocused ? colors.primary : colors.grey, }]}>{title}</Text>
             </View>
         );
@@ -112,8 +112,8 @@ function TabNavigator() {
                 }}
             />
             <Tab.Screen
-                name="Calendar"
-                component={Calendar}
+                name="CalendarScreen"
+                component={CalendarScreen}
                 options={{
                     headerTitle: "",
                 headerLeft: (title) => {
