@@ -13,6 +13,8 @@ import VideoCall from '../screens/VideoCall/VideoCall';
 import SelectRole from '../screens/SelectRole/SelectRole';
 import AddSchedule from '../screens/AddSchedule/AddSchedule';
 import IntroScreen from '../screens/IntroScreen/IntroScreen';
+import ClientProfile from '../screens/Clients/ClientProfile';
+import AddClient1 from '../screens/AddClient/AddClient1';
 
 
 
@@ -33,6 +35,8 @@ function Navigation() {
                 <Stack.Screen name="SignupLawyer" component={SignupLawyer} />
                 <Stack.Screen name="Verifyotp" component={Verifyotp} />
                 <Stack.Screen name="Notification" component={Notification} />
+                <Stack.Screen name="ClientProfile" component={ClientProfile} />
+                <Stack.Screen name="AddClient1" component={AddClient1} />
                 <Stack.Screen name="VideoCall" component={VideoCall} />
                 <Stack.Screen
                 name="Settings" component={Settings} />

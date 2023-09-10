@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     daysMonthasViewCss: {
         // borderWidth: 1,
         // borderColor: colors.primary,
-        width: Utils.ScreenWidth(9), // 105,
+        width: Utils.ScreenWidth(10), // 105,
         height: Utils.ScreenWidth(15),
         marginRight: Utils.ScreenWidth(3),
         marginLeft: Utils.ScreenWidth(1),

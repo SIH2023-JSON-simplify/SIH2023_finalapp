@@ -18,7 +18,7 @@ const BareActs = () => {
 
   return (
     <SafeAreaView style = {{backgroundColor: colors.white}}>
-
+       <StatusBar animated={true} backgroundColor={colors.white} barStyle="dark-content" />
     <View style={{
                     marginTop: Utils.ScreenHeight(2),
                     height: Utils.ScreenHeight(6),

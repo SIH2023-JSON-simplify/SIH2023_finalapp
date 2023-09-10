@@ -2,8 +2,10 @@ import { View, Text, TextInput, Image, TouchableOpacity, ScrollView } from 'reac
 import React, { useState } from 'react'
 import { Utils, colors } from '../../contants'
 import ImagesPath from '../../assests/ImagesPath'
+import { useNavigation } from '@react-navigation/native';
 
 const Clients = () => {
+  const navigation = useNavigation();
   const[searchText,setSearchtext] = useState("")
   return (
     <View style={{flex:1, backgroundColor:colors.white}}>
@@ -27,7 +29,8 @@ const Clients = () => {
                 </View>
 
         <ScrollView style={{marginHorizontal:Utils.ScreenWidth(6), marginTop:Utils.ScreenHeight(2)}}>
-          <TouchableOpacity style={{marginTop:Utils.ScreenHeight(1.5),borderWidth:1,justifyContent:"space-between", height:Utils.ScreenHeight(9), borderColor:colors.grey2, borderRadius:10, flexDirection:"row", alignItems:"center"}}>
+          <TouchableOpacity style={{marginTop:Utils.ScreenHeight(1.5),borderWidth:1,justifyContent:"space-between", height:Utils.ScreenHeight(9), borderColor:colors.grey2, borderRadius:10, flexDirection:"row", alignItems:"center"}}
+          onPress={() => {navigation.navigate('ClientProfile')}}>
                <View style={{flexDirection:"row",alignItems:"center", marginLeft:Utils.ScreenWidth(4) }}>
                 <Image source={ImagesPath.home.manImg} style={{height:Utils.ScreenHeight(6), width:Utils.ScreenWidth(14), resizeMode:"contain"}}/>
                 <View style={{marginLeft:Utils.ScreenWidth(4)}}>
