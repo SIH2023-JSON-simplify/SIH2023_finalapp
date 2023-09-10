@@ -244,7 +244,7 @@ const CalendarScreen = (props) => {
                         elevation: currDate === newDate || selectCalender === index ? 15 : 0,
                         color: currDate === newDate || selectCalender === index ? colors.white : colors.black,
                         backgroundColor: selectCalender === index ? colors.secondary :
-                        currDate === newDate ? colors.primary :
+                        currDate === newDate ? colors.tertiary :
                         colors.white, 
                     }]}>
                         <View style={{justifyContent:"center", alignItems:"center", }}>

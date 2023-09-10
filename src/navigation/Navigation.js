@@ -15,6 +15,11 @@ import AddSchedule from '../screens/AddSchedule/AddSchedule';
 import IntroScreen from '../screens/IntroScreen/IntroScreen';
 import ClientProfile from '../screens/Clients/ClientProfile';
 import AddClient1 from '../screens/AddClient/AddClient1';
+import CheckStatus from '../screens/CheckStatus/CheckStatus';
+import Signupclient from '../screens/Signupclient/Signupclient';
+import Loginclient from '../screens/Loginclient/Loginclient';
+import Verifyotpclient from '../screens/Verifyotpclient/Verifyotpclient';
+import ClientTabNavigator from './ClientTabNavigator';
 
 
 
@@ -30,20 +35,28 @@ function Navigation() {
                 initialRouteName="Splash"
                 screenOptions={{ headerShown: false }}>
                  <Stack.Screen name="Splash" component={Splash} />
-                <Stack.Screen name="LoginLawyer" component={LoginLawyer} />
                 <Stack.Screen name="IntroScreen" component={IntroScreen} />
+                <Stack.Screen name="LoginLawyer" component={LoginLawyer} />
                 <Stack.Screen name="SignupLawyer" component={SignupLawyer} />
                 <Stack.Screen name="Verifyotp" component={Verifyotp} />
                 <Stack.Screen name="Notification" component={Notification} />
                 <Stack.Screen name="ClientProfile" component={ClientProfile} />
                 <Stack.Screen name="AddClient1" component={AddClient1} />
                 <Stack.Screen name="VideoCall" component={VideoCall} />
+                <Stack.Screen name="CheckStatus" component={CheckStatus} />
                 <Stack.Screen
                 name="Settings" component={Settings} />
                 <Stack.Screen 
                 options={{ gestureEnabled: false }}
                 name="TabNavigator" component={TabNavigator} />
 
+                {/* Client screens */}
+                <Stack.Screen name="Loginclient" component={Loginclient} />
+                <Stack.Screen name="Signupclient" component={Signupclient} />
+                <Stack.Screen name="Verifyotpclient" component={Verifyotpclient} />
+                <Stack.Screen 
+                options={{ gestureEnabled: false }}
+                name="ClientTabNavigator" component={ClientTabNavigator} />
                 
 
                 

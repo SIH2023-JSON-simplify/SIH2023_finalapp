@@ -136,7 +136,7 @@ const AddClient1 = () => {
                                          alignItems: 'center',
                                          justifyContent: 'center',
                                          height: Utils.ScreenHeight(7), 
-                                         width: Utils.ScreenWidth(40)}} onPress = {() => { navigation.navigate('')}}>
+                                         width: Utils.ScreenWidth(40)}} onPress = {() => { }}>
                <Text style = {{ color: colors.white, fontWeight: 400, fontSize: 16}}>
                  Next
                </Text>

@@ -26,7 +26,7 @@ const OnboardWelcome = (props) => {
                 </TouchableOpacity>
                 <TouchableOpacity 
                 onPress={() => {
-                    // navigation.navigate('LanguageSelectionScreen')
+                    navigation.navigate('Loginclient')
                 }}
                 style={{ backgroundColor: colors.primary, width: '90%', height: 50, borderRadius: 10, justifyContent: 'center', alignItems: 'center', marginTop: Utils.ScreenHeight(2) }}>
                     <Text style={{ fontSize: 16, fontWeight: '800', color: 'white' }}>Continue as a Client</Text>

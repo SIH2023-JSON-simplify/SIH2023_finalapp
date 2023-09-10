@@ -179,6 +179,12 @@ const ImagesPath = {
         court2: require('./images/LegalBridge/court2.png'),
         intro: require('./images/LegalBridge/lawyer.png'),
         intro2: require('./images/LegalBridge/lawyer2.png'),
+        captcha: require('./images/LegalBridge/captcha.png'),
+        legalcase: require('./images/LegalBridge/legalcase.png'),
+        notary: require('./images/LegalBridge/notary.png'),
+        certificates: require('./images/LegalBridge/certificates.png'),
+        chat: require('./images/LegalBridge/chat.png'),
+        agreement: require('./images/LegalBridge/agreement.png'),
 
 
     }

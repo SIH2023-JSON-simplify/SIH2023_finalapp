@@ -49,7 +49,9 @@ const Settings = () => {
 
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ borderWidth: 0.5, marginTop: Utils.ScreenHeight(2), borderColor: colors.grey2, borderRadius: 6, height: Utils.ScreenHeight(6), justifyContent: "center" }} >
+                        <TouchableOpacity
+                        onPress={()=>{navigation.navigate("CheckStatus")}}
+                        style={{ borderWidth: 0.5, marginTop: Utils.ScreenHeight(2), borderColor: colors.grey2, borderRadius: 6, height: Utils.ScreenHeight(6), justifyContent: "center" }} >
                             <View style={{ flexDirection: "row", alignItems: "center", marginHorizontal: Utils.ScreenWidth(4), justifyContent: "space-between" }}>
                                 <Text style={{ color: colors.black, fontWeight: '400', fontSize: 16 }}>Check Case status</Text>
 
@@ -114,7 +116,14 @@ const Settings = () => {
 
       
     </View>
-                    <TouchableOpacity style={{marginTop:Utils.ScreenHeight(4), width:Utils.ScreenWidth(50), alignSelf:"center"}}>
+                    <TouchableOpacity
+                    onPress={()=>{ navigation.reset({
+                        index: 0,
+                        routes: [
+                            { name: 'Splash' },
+                        ],
+                    });}}
+                    style={{marginTop:Utils.ScreenHeight(4), width:Utils.ScreenWidth(50), alignSelf:"center"}}>
                         <View style={{height:Utils.ScreenHeight(5),backgroundColor:colors.primary, borderRadius:100, flexDirection:"row", alignItems:"center", justifyContent:"space-evenly"}}>
                             <Text style={{color:colors.white , fontSize:18, fontWeight:500}}>Log out</Text>
                             <Image source={ImagesPath.sideMenu.logout_icon} style={{tintColor:colors.white}}/>

@@ -1,4 +1,4 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, StatusBar } from 'react-native'
 import React, {useState} from 'react'
 import { ScrollView, TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import { Utils, colors } from '../../contants'

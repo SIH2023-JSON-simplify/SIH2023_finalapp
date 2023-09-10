@@ -24,7 +24,7 @@ const Register = () => {
 
   return (
     <SafeAreaView>
-        <StatusBar animated={true} backgroundColor={colors.white} barStyle="dark-content" />
+        <StatusBar animatedanimated={true} backgroundColor={colors.white} barStyle="dark-content" />
       <ScrollView
                 backgroundColor = {colors.white}
                 showsVerticalScrollIndicator={false}
