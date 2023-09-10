@@ -143,7 +143,7 @@ function SignInPhone(props) {
                             </View>
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity onPress={() => navigation.navigate('SignupLawyer')} style={{ justifyContent: 'center', flexDirection: 'row', marginVertical: Utils.ScreenHeight(2) }}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Register')} style={{ justifyContent: 'center', flexDirection: 'row', marginVertical: Utils.ScreenHeight(2) }}>
                         {/* <LinearGradient start={{ x: 1, y: 0 }} end={{ x: 0, y: 0 }} colors={['#018081', '#3683A9']} style={styles.linearGradient}> */}
                         <Text style={styles.buttonText}>
                             Dont have an account?

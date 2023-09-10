@@ -4,10 +4,23 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import ImagesPath from '../../assests/ImagesPath'
 import { Utils, colors } from '../../contants'
 import { ScrollView, TextInput } from 'react-native-gesture-handler'
+import { useNavigation } from '@react-navigation/native';
 import styles from '../Splash/styles'
 
 const Register = () => {
-  const[fullName , setFullName] = useState('');
+  const navigation = useNavigation();
+  const [fullName , setFullName] = useState('');
+  const [dob, setDOB] = useState(null);
+  const [mobNo, setMobNo] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [about, setAbout] = useState('');
+  const [caseDetails, setCaseDetails] = useState('');
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option);
+  };
 
   return (
     <SafeAreaView>
@@ -87,55 +100,161 @@ const Register = () => {
                     alignItems: "center", backgroundColor: colors.white, justifyContent: "space-evenly"
                 }}>
                     <TextInput
-                        value={fullName}
-                        onChange={(text) => setFullName(text)}
+                        value={dob}
+                        onChange={(text) => setDOB(text)}
                         style={{ height: Utils.ScreenHeight(6), borderColor: colors.newGrey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%', 
                                  borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)}}
-                        placeholderTextColor={colors.newGrey} placeholder="DD/MM/YYYY" />
+                        placeholderTextColor={colors.newGrey} placeholder="Enter your date of birth" />
             </View>
 
-            <View style = {{ marginLeft: Utils.ScreenHeight(2), flexDirection: 'row', justifyContent: 'space-evenly'}}>
-              <TouchableOpacity style = {{
-                marginTop: Utils.ScreenHeight(2),
-                // marginRight: Utils.ScreenWidth(2),
-                borderRadius: 8, 
-                backgroundColor: colors.white
-              }}>
-                  <Text
-                        style={{ height: Utils.ScreenHeight(6), borderColor: colors.newGrey, paddingHorizontal: Utils.ScreenWidth(3), width: '100%', 
-                                 borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)}}
-                        placeholderTextColor={colors.newGrey} placeholder="Male" />
-              </TouchableOpacity>
+        <View style = {{  flexDirection: 'row', justifyContent: 'space-evenly', marginTop: Utils.ScreenHeight(2)}}>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <TouchableOpacity
+          style={{
+            width: 24,
+            height: 24,
+            borderRadius: 12,
+            borderWidth: 2,
+            borderColor: colors.newGrey,
+            backgroundColor: selectedOption === 'Male' ? colors.selectedOption : 'transparent',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginRight: 8,
+          }}
+          onPress={() => handleOptionSelect('Male')}
+        >
+          {selectedOption === 'Male' && (
+            <Text style={{ color: colors.newGrey }}>✓</Text>
+          )}
+        </TouchableOpacity>
+        <Text style={{ fontSize: 16, color: colors.newGrey }}>Male</Text>
+      </View>
 
-              <TouchableOpacity style = {{
-                marginTop: Utils.ScreenHeight(2),
-                marginRight: Utils.ScreenWidth(2),
-                borderRadius: 8, 
-                backgroundColor: colors.white
-              }}>
-                  <TextInput
-                        value={fullName}
-                        onChange={(text) => setFullName(text)}
-                        style={{ height: Utils.ScreenHeight(6), borderColor: colors.newGrey, paddingHorizontal: Utils.ScreenWidth(3), width: '100%', 
-                                 borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)}}
-                        placeholderTextColor={colors.newGrey} placeholder="Female" />
-              </TouchableOpacity>
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <TouchableOpacity
+          style={{
+            width: 24,
+            height: 24,
+            borderRadius: 12,
+            borderWidth: 2,
+            borderColor: colors.newGrey,
+            backgroundColor: selectedOption === 'Female' ? colors.selectedOption : 'transparent',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginRight: 8,
+          }}
+          onPress={() => handleOptionSelect('Female')}
+        >
+          {selectedOption === 'Female' && (
+            <Text style={{ color: colors.newGrey }}>✓</Text>
+          )}
+        </TouchableOpacity>
+        <Text style={{ fontSize: 16, color: colors.newGrey }}>Female</Text>
+      </View>
 
-              <TouchableOpacity style = {{
-                marginTop: Utils.ScreenHeight(2),
-                marginRight: Utils.ScreenWidth(2),
-                borderRadius: 8, 
-                backgroundColor: colors.white
-              }}>
-                  <TextInput
-                        value={fullName}
-                        onChange={(text) => setFullName(text)}
-                        style={{ height: Utils.ScreenHeight(6), borderColor: colors.newGrey, paddingHorizontal: Utils.ScreenWidth(3), width: '100%', 
-                                 borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)}}
-                        placeholderTextColor={colors.newGrey} placeholder="Other" />
-              </TouchableOpacity>
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <TouchableOpacity
+          style={{
+            width: 24,
+            height: 24,
+            borderRadius: 12,
+            borderWidth: 2,
+            borderColor: colors.newGrey,
+            backgroundColor: selectedOption === 'Other' ? colors.selectedOption : 'transparent',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginRight: 8,
+          }}
+          onPress={() => handleOptionSelect('Other')}
+        >
+          {selectedOption === 'Other' && (
+            <Text style={{ color: colors.newGrey }}>✓</Text>
+          )}
+        </TouchableOpacity>
+        <Text style={{ fontSize: 16, color: colors.newGrey }}>Other</Text>
+      </View>
             </View>
 
+            <View style={{
+                    marginTop: Utils.ScreenHeight(2),
+                    borderRadius: 8, 
+                    alignItems: "center", backgroundColor: colors.white, justifyContent: "space-evenly"
+                }}>
+                    <TextInput
+                        value={mobNo}
+                        onChange={(text) => setMobNo(text)}
+                        style={{ height: Utils.ScreenHeight(6), borderColor: colors.newGrey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%', 
+                                 borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)}}
+                        placeholderTextColor={colors.newGrey} placeholder="Enter Mobile" />
+            </View>
+
+            <View style={{
+                    marginTop: Utils.ScreenHeight(2),
+                    borderRadius: 8, 
+                    alignItems: "center", backgroundColor: colors.white, justifyContent: "space-evenly"
+                }}>
+                    <TextInput
+                        value={email}
+                        onChange={(text) => setEmail(text)}
+                        style={{ height: Utils.ScreenHeight(6), borderColor: colors.newGrey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%', 
+                                 borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)}}
+                        placeholderTextColor={colors.newGrey} placeholder="Enter Email" />
+            </View>
+
+            <View style={{
+                    marginTop: Utils.ScreenHeight(2),
+                    borderRadius: 8, 
+                    alignItems: "center", backgroundColor: colors.white, justifyContent: "space-evenly"
+                }}>
+                    <TextInput
+                        value={password}
+                        onChange={(text) => setPassword(text)}
+                        style={{ height: Utils.ScreenHeight(6), borderColor: colors.newGrey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%', 
+                                 borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)}}
+                        placeholderTextColor={colors.newGrey} placeholder="Create Password" />
+            </View>
+
+            <View style = {{ flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: Utils.ScreenHeight(1)}}>
+              <View style = {{ backgroundColor: colors.grey2, width: '92%', height: Utils.ScreenHeight(0.1), marginTop: Utils.ScreenHeight(1) }} />
+              </View>
+
+            <View style = {{ marginLeft: Utils.ScreenWidth(3), marginTop: Utils.ScreenHeight(2), flexDirection: 'row'}}>
+              <Text style = {{ color: colors.black, fontWeight: 600, fontSize: 14}}>About me</Text>
+              <Text style = {{color: colors.newGrey, }}> (optional) </Text>
+            </View>
+            <TextInput
+                        value={about}
+                        onChange={(text) => setAbout(text)}
+                        style={{ height: Utils.ScreenHeight(12), borderColor: colors.newGrey, paddingHorizontal: Utils.ScreenWidth(3),
+                                 width: '93%', marginTop: Utils.ScreenHeight(1.5),
+                                 borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2), marginLeft: Utils.ScreenWidth(3)}}
+                        placeholderTextColor={colors.newGrey} placeholder="Create Password" />
+
+            <View style={{
+                    marginTop: Utils.ScreenHeight(2),
+                    borderRadius: 8, 
+                    alignItems: "center", backgroundColor: colors.white, justifyContent: "space-evenly"
+                }}>
+                    <TextInput
+                        value={caseDetails}
+                        onChange={(text) => setCaseDetails(text)}
+                        style={{ height: Utils.ScreenHeight(6), borderColor: colors.newGrey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%', 
+                                 borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)}}
+                        placeholderTextColor={colors.newGrey} placeholder="Add case details" />
+            </View>
+
+          <View style = {{ alignItems: 'center', marginTop: Utils.ScreenHeight(3), marginBottom: Utils.ScreenHeight(2)}}>
+            <TouchableOpacity style = {{ backgroundColor: colors.primary,  
+                                         borderRadius: 8,
+                                         alignItems: 'center',
+                                         justifyContent: 'center',
+                                         height: Utils.ScreenHeight(7), 
+                                         width: '92%'}} onPress = {() => { navigation.navigate('SignupLawyer')}}>
+               <Text style = {{ color: colors.white, fontWeight: 400, fontSize: 16}}>
+                Continue
+               </Text>
+            </TouchableOpacity>
+          </View>
       </ScrollView>
     </SafeAreaView>
   )

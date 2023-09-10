@@ -3,8 +3,11 @@ import React, { useState } from 'react'
 import { Utils, colors } from '../../contants'
 import ImagesPath from '../../assests/ImagesPath'
 import { FlatList } from 'react-native-gesture-handler'
+import Navigation from '../../navigation/Navigation'
+import { useNavigation } from '@react-navigation/native'
 
 const HomeScreen = () => {
+    const navigation = useNavigation();
     const data = [
         { id: '1' },
         { id: '2' },
@@ -49,6 +52,7 @@ const HomeScreen = () => {
             </TouchableOpacity>
         )
     }
+
     return (
         <View style={{ backgroundColor: colors.white, flex: 1 }}>
             <ScrollView style={{}}>
@@ -64,7 +68,7 @@ const HomeScreen = () => {
                         onChange={(text) => setSearchtext(text)}
                         style={{ height: Utils.ScreenHeight(5), borderColor: "#D8D8D8", paddingHorizontal: Utils.ScreenWidth(3), width: Utils.ScreenWidth(55), borderRadius: 5 }}
                         placeholderTextColor={'grey'} placeholder="Search" />
-                    <TouchableOpacity style={{ paddingHorizontal: 10, }}>
+                    <TouchableOpacity style={{ paddingHorizontal: 10 }}>
                         <Image style={{ height: Utils.ScreenHeight(3), width: Utils.ScreenHeight(3), resizeMode: 'contain', tintColor: colors.blackdark }} source={ImagesPath.home.filter_icon} />
                     </TouchableOpacity>
 
@@ -72,8 +76,8 @@ const HomeScreen = () => {
 
                 <View style={{ marginTop: Utils.ScreenHeight(3), }}>
                     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-                        <Text style={{ marginHorizontal: Utils.ScreenWidth(4), fontSize: 18, fontWeight: 600, marginBottom: Utils.ScreenHeight(1.5) }}>Trending</Text>
-                        <Text style={{ marginHorizontal: Utils.ScreenWidth(4), fontSize: 14, fontWeight: 400, marginBottom: Utils.ScreenHeight(1.5), color: colors.grey }}>See All</Text>
+                        <Text style={{ marginHorizontal: Utils.ScreenWidth(4), fontSize: 18, fontWeight: 600, marginBottom: Utils.ScreenHeight(1.5) }}>Trending </Text>
+                        <Text style={{ marginHorizontal: Utils.ScreenWidth(4), fontSize: 14, fontWeight: 400, marginBottom: Utils.ScreenHeight(1.5), color: colors.grey }}>See All photos</Text>
                     </View>
                     <FlatList
 

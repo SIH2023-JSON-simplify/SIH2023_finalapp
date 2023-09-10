@@ -148,7 +148,7 @@ function SignUpPhone(props) {
                         }
                         <TouchableOpacity style={{ width: '90%' }}
                             onPress={() => {
-                                navigation.navigate('ConsentScreen')
+                                navigation.navigate('Register')
                             }}
                         >
                             <Text style={{ fontSize: 14, fontWeight: '400', color: 'grey' }}>By clicking "Continue" or using the app, you acknowledge that you have read, understood and agree to abide by the terms and conditions.</Text>
