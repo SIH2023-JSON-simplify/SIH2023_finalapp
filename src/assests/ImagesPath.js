@@ -177,6 +177,8 @@ const ImagesPath = {
         search: require('./images/LegalBridge/search.png'),
         court1: require('./images/LegalBridge/court1.png'),
         court2: require('./images/LegalBridge/court2.png'),
+        intro: require('./images/LegalBridge/lawyer.png'),
+        intro2: require('./images/LegalBridge/lawyer2.png'),
 
 
     }
