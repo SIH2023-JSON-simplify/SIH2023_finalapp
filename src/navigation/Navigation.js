@@ -20,6 +20,9 @@ import Signupclient from '../screens/Signupclient/Signupclient';
 import Loginclient from '../screens/Loginclient/Loginclient';
 import Verifyotpclient from '../screens/Verifyotpclient/Verifyotpclient';
 import ClientTabNavigator from './ClientTabNavigator';
+import Uploadtoipfs from '../screens/Uploadtoipfs/Uploadtoipfs';
+import test from '../screens/test/test';
+import caseresults from '../screens/caseresults/caseresults';
 
 
 
@@ -32,7 +35,7 @@ function Navigation() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="Splash"
+                initialRouteName="ClientTabNavigator"
                 screenOptions={{ headerShown: false }}>
                  <Stack.Screen name="Splash" component={Splash} />
                 <Stack.Screen name="IntroScreen" component={IntroScreen} />
@@ -44,6 +47,9 @@ function Navigation() {
                 <Stack.Screen name="AddClient1" component={AddClient1} />
                 <Stack.Screen name="VideoCall" component={VideoCall} />
                 <Stack.Screen name="CheckStatus" component={CheckStatus} />
+                <Stack.Screen name="Uploadtoipfs" component={Uploadtoipfs} />
+                <Stack.Screen name="caseresults" component={caseresults} />
+                <Stack.Screen name="test" component={test} />
                 <Stack.Screen
                 name="Settings" component={Settings} />
                 <Stack.Screen 
