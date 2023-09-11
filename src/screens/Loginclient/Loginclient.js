@@ -60,6 +60,7 @@ function loginclient(props) {
         }
         // showLoader(true)
         console.log('body ', formdata);
+
         Helper.makeRequest({ url: ApiUrl.generateotp, data: body, method: "POST" }).then((data) => {
             hideLoader(false)
             console.log('-----------res:: ', data);
@@ -82,6 +83,8 @@ function loginclient(props) {
             // Helper.showToast(err.message)
             hideLoader(false)
         })
+
+        
     }
 
     const handleInput = (text) => {

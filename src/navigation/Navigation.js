@@ -22,6 +22,9 @@ import Verifyotpclient from '../screens/Verifyotpclient/Verifyotpclient';
 import ClientTabNavigator from './ClientTabNavigator';
 import Cases from '../screens/Cases/Cases';
 import AddCases from '../screens/Cases/AddCases';
+import Uploadtoipfs from '../screens/Uploadtoipfs/Uploadtoipfs';
+import caseresults from '../screens/caseresults/caseresults';
+import test from '../screens/test/test';
 
 
 
@@ -34,7 +37,7 @@ function Navigation() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="Cases"
+                initialRouteName="Splash"
                 screenOptions={{ headerShown: false }}>
                  <Stack.Screen name="Splash" component={Splash} />
                 <Stack.Screen name="IntroScreen" component={IntroScreen} />
@@ -47,8 +50,9 @@ function Navigation() {
                 <Stack.Screen name="VideoCall" component={VideoCall} />
                 <Stack.Screen name="Cases" component={Cases} />
                 <Stack.Screen name="CheckStatus" component={CheckStatus} />
-                <Stack.Screen name="AddCases" component={AddCases} />
-                <Stack.Screen name="Register" component={Register} />
+                <Stack.Screen name="Uploadtoipfs" component={Uploadtoipfs} />
+                <Stack.Screen name="caseresults" component={caseresults} />
+                <Stack.Screen name="test" component={test} />
                 <Stack.Screen
                 name="Settings" component={Settings} />
                 <Stack.Screen 
