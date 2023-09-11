@@ -93,9 +93,61 @@ const ClientHomeScreen = () => {
 
                 </View>
 
+                <View style={{marginTop:Utils.ScreenHeight(3)}}>
+                <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+                        <Text style={{ marginHorizontal: Utils.ScreenWidth(4), fontSize: 18, fontWeight: 600, marginBottom: Utils.ScreenHeight(1.5) }}>Quick Tabs </Text>
+                        <Text style={{ marginHorizontal: Utils.ScreenWidth(4), fontSize: 14, fontWeight: 400, marginBottom: Utils.ScreenHeight(1.5), color: colors.grey }}>View All</Text>
+                    </View>
+                    <View style={{marginHorizontal:Utils.ScreenWidth(4),flexDirection:"row", justifyContent:"space-around", alignItems:"center"}}>
+                      <TouchableOpacity>
+                        <Image source={ImagesPath.LegalBridge.apply} style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(24),
+                        resizeMode:"contain" , borderWidth:0.5, borderColor:colors.grey2, borderRadius:12, shadowColor:colors.blackdark, shadowOpacity:0.1
+                        }}/>
+                      </TouchableOpacity>
+                      <TouchableOpacity
+                      onPress={()=>{navigation.navigate("CheckStatus")}}
+                      >
+                        <Image source={ImagesPath.LegalBridge.checkstatus} style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(24),
+                        resizeMode:"contain" , borderWidth:0.5, borderColor:colors.grey2, borderRadius:12, shadowColor:colors.blackdark, shadowOpacity:0.1
+                        }}/>
+                      </TouchableOpacity>
+                      <TouchableOpacity>
+                        <Image source={ImagesPath.LegalBridge.resumeapplication} style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(24),
+                        resizeMode:"contain" , borderWidth:0.5, borderColor:colors.grey2, borderRadius:12, shadowColor:colors.blackdark, shadowOpacity:0.1
+                        }}/>
+                      </TouchableOpacity>
+                    </View>
+                </View>
+                <View style={{
+                  marginTop:Utils.ScreenHeight(3),
+                  borderWidth:0.5,borderColor:colors.grey2, borderRadius:12,
+                  marginHorizontal:Utils.ScreenWidth(4), flexDirection:"row", justifyContent:"flex-start", alignItems:"center"}}>
+                <View >
+                  <Image source={ImagesPath.LegalBridge.appoinment}
+                  style={{height:Utils.ScreenHeight(13), width:Utils.ScreenWidth(45),
+                  resizeMode:"contain", 
+                  }}
+                  />
+                </View>
+
+                <View>
+                  <Text style={{fontSize:Utils.ScreenHeight(1.8),fontWeight:450}}>TODAY'S APPOINMENT</Text>
+                  <Text style={{fontWeight:300, marginTop:Utils.ScreenHeight(1), fontSize:Utils.ScreenHeight(1.5)}}>Appoinment with {'\n'}Mr Vishesh Gatha</Text>
+                  <TouchableOpacity 
+                  onPress={()=>{navigation.navigate("VideoCall")}}
+                  style={{alignSelf:"center", marginTop:Utils.ScreenHeight(1)
+                ,backgroundColor:colors.primary, borderRadius:12
+                
+                }}>
+                    <Text style={{fontSize:Utils.ScreenHeight(1.5), color:colors.white,paddingVertical:Utils.ScreenHeight(0.7),
+                    paddingHorizontal:Utils.ScreenWidth(8)
+                    }}>Connect</Text>
+                  </TouchableOpacity>
+                </View>
+                </View>
                 <View style={{ marginTop: Utils.ScreenHeight(3),marginHorizontal: Utils.ScreenWidth(4) }}>
                     <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-                        <Text style={{  fontSize: 18, fontWeight: 600, marginBottom: Utils.ScreenHeight(1.5) }}>Latest</Text>
+                        <Text style={{  fontSize: 18, fontWeight: 600, marginBottom: Utils.ScreenHeight(1.5) }}>Explore</Text>
 
                     </View>
                     <FlatList
