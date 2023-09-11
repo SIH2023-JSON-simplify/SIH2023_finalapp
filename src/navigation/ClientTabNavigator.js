@@ -310,7 +310,7 @@ function ClientTabNavigator() {
                 options={{
                     headerLeft: (title) => {
                         return (
-                            <Text style={{ color: colors.black, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>Clients</Text>
+                            <Text style={{ color: colors.black, fontSize: 20, fontWeight: 600, marginLeft: Utils.ScreenWidth(5) }}>Profile</Text>
                         )
                     },
                     headerRight: () => {
@@ -327,20 +327,10 @@ function ClientTabNavigator() {
     
                                             height: Utils.ScreenWidth(6),
                                             width: Utils.ScreenWidth(6),
-                                            marginRight: Utils.ScreenWidth(6)
+                                            marginRight: Utils.ScreenWidth(2)
                                         }} />
                                     </TouchableOpacity>
-                                    <TouchableOpacity
-                                        onPress={() => {
-                                            navigation.navigate("ClientSettings")
-                                        }}>
-                                        <Image source={ImagesPath.LegalBridge.settings} style={{
-                                            resizeMode: 'contain',
-                                            tintColor: colors.blackdark,
-                                            height: Utils.ScreenWidth(6),
-                                            width: Utils.ScreenWidth(6),
-                                        }} />
-                                    </TouchableOpacity>
+                                    
                                 </View>
     
                             </View>

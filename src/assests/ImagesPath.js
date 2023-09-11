@@ -185,6 +185,10 @@ const ImagesPath = {
         certificates: require('./images/LegalBridge/certificates.png'),
         chat: require('./images/LegalBridge/chat.png'),
         agreement: require('./images/LegalBridge/agreement.png'),
+        resumeapplication: require('./images/LegalBridge/resumeapplication.png'),
+        checkstatus: require('./images/LegalBridge/checkstatus.png'),
+        apply: require('./images/LegalBridge/apply.png'),
+        appoinment: require('./images/LegalBridge/appoinment.png'),
 
 
     }
