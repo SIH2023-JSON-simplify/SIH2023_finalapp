@@ -1,10 +1,7 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import { StyleSheet, View, Text, SafeAreaView, ScrollView, Image, Keyboard, TouchableOpacity, TextInput, StatusBar, Switch, FlatList, ActivityIndicator, ImageBackground, Modal, AppState, } from 'react-native';
-
-
 import styles from './styles';
 import moment from 'moment';
-
 // import CustomLoader from '../../../component/CustomLoader';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
 import ApiUrl from '../../Lib/ApiUrl';
@@ -59,14 +56,6 @@ const CalendarScreen = (props) => {
     const [selectCalender, setSelectCalender] = useState(null);
     const [restrictFunction, setRestrictFunction] = useState('');
     const [appointmentDate, setAppointmentDate] = useState('');
-
-
-   
- 
-
-
-
-
 
     const getDatesArray = (startDate, endDate) => {
         const datesArray = [];
@@ -567,59 +556,86 @@ const CalendarScreen = (props) => {
                        <ScrollView style={{marginTop:Utils.ScreenHeight(2)}}>
 
                             <View style={{flexDirection:"row", justifyContent:"center",alignItems:"center", marginBottom:Utils.ScreenHeight(2)}} >
-                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor:colors.primary}}></View>
-                                <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3),marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
-                                   <View style={{padding:Utils.ScreenHeight(1)}}>
-                                    <Text style={{fontWeight:500, fontSize:15}}>Vishesh Gatha</Text>
-                                    <Text style={{fontWeight:300, fontSize:10}}>Video Appointment</Text>
-                                    <Text style={{fontWeight:500, fontSize:10,marginTop:Utils.ScreenHeight(1) }}>8pm-10pm</Text>
+                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor: colors.primary}}></View>
+                                <View style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3), marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
+                                   <View style={{padding:Utils.ScreenHeight(1), marginTop: Utils.ScreenHeight(1), marginBottom: Utils.ScreenHeight(1), marginLeft: Utils.ScreenWidth(2)}}>
+                                    <Text style={{fontWeight:500, fontSize:13, color: colors.primary}}>Vishesh Gatha</Text>
+                                    <Text style={{fontWeight:300, fontSize:11, color: colors.primary}}>Video Appointment</Text>
+                                    <Text style={{fontWeight:500, fontSize:10, marginTop:Utils.ScreenHeight(0), color: colors.primary }}>8pm-10pm</Text>
                                     </View>
                                     <TouchableOpacity
                                     onPress={()=>{navigation.navigate("VideoCall")}}
                                     style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
-                                        <Text style={{padding:Utils.ScreenWidth(1) , color:colors.primary, fontWeight:500}}>Connect</Text>
+                                        <Text style={{padding:Utils.ScreenWidth(1.5) , color:colors.primary, fontWeight:500}}>Connect</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
+
                             <View style={{flexDirection:"row", justifyContent:"center",alignItems:"center", marginBottom:Utils.ScreenHeight(2)}} >
-                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor:colors.primary}}></View>
-                                <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3),marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
-                                   <View style={{padding:Utils.ScreenHeight(1)}}>
-                                    <Text style={{fontWeight:500, fontSize:15}}>Vishesh Gatha</Text>
-                                    <Text style={{fontWeight:300, fontSize:10}}>Video Appointment</Text>
-                                    <Text style={{fontWeight:500, fontSize:10,marginTop:Utils.ScreenHeight(1) }}>8pm-10pm</Text>
+                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor: colors.primary}}></View>
+                                <View style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3), marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
+                                   <View style={{padding:Utils.ScreenHeight(1), marginTop: Utils.ScreenHeight(1), marginBottom: Utils.ScreenHeight(1), marginLeft: Utils.ScreenWidth(2)}}>
+                                    <Text style={{fontWeight:500, fontSize:13, color: colors.primary}}>Vishesh Gatha</Text>
+                                    <Text style={{fontWeight:300, fontSize:11, color: colors.primary}}>Video Appointment</Text>
+                                    <Text style={{fontWeight:500, fontSize:10, marginTop:Utils.ScreenHeight(0), color: colors.primary }}>8pm-10pm</Text>
                                     </View>
-                                    <TouchableOpacity style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
-                                        <Text style={{padding:Utils.ScreenWidth(1) , color:colors.primary, fontWeight:500}}>Connect</Text>
+                                    <TouchableOpacity
+                                    onPress={()=>{navigation.navigate("VideoCall")}}
+                                    style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
+                                        <Text style={{padding:Utils.ScreenWidth(1.5) , color:colors.primary, fontWeight:500}}>Connect</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
+
                             <View style={{flexDirection:"row", justifyContent:"center",alignItems:"center", marginBottom:Utils.ScreenHeight(2)}} >
-                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor:colors.primary}}></View>
-                                <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3),marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
-                                   <View style={{padding:Utils.ScreenHeight(1)}}>
-                                    <Text style={{fontWeight:500, fontSize:15}}>Vishesh Gatha</Text>
-                                    <Text style={{fontWeight:300, fontSize:10}}>Video Appointment</Text>
-                                    <Text style={{fontWeight:500, fontSize:10,marginTop:Utils.ScreenHeight(1) }}>8pm-10pm</Text>
+                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor: colors.primary}}></View>
+                                <View style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3), marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
+                                   <View style={{padding:Utils.ScreenHeight(1), marginTop: Utils.ScreenHeight(1), marginBottom: Utils.ScreenHeight(1), marginLeft: Utils.ScreenWidth(2)}}>
+                                    <Text style={{fontWeight:500, fontSize:13, color: colors.primary}}>Vishesh Gatha</Text>
+                                    <Text style={{fontWeight:300, fontSize:11, color: colors.primary}}>Video Appointment</Text>
+                                    <Text style={{fontWeight:500, fontSize:10, marginTop:Utils.ScreenHeight(0), color: colors.primary }}>8pm-10pm</Text>
                                     </View>
-                                    <TouchableOpacity style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
-                                        <Text style={{padding:Utils.ScreenWidth(1) , color:colors.primary, fontWeight:500}}>Connect</Text>
+                                    <TouchableOpacity
+                                    onPress={()=>{navigation.navigate("VideoCall")}}
+                                    style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
+                                        <Text style={{padding:Utils.ScreenWidth(1.5) , color:colors.primary, fontWeight:500}}>Connect</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
+
                             <View style={{flexDirection:"row", justifyContent:"center",alignItems:"center", marginBottom:Utils.ScreenHeight(2)}} >
-                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor:colors.primary}}></View>
-                                <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3),marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
-                                   <View style={{padding:Utils.ScreenHeight(1)}}>
-                                    <Text style={{fontWeight:500, fontSize:15}}>Vishesh Gatha</Text>
-                                    <Text style={{fontWeight:300, fontSize:10}}>Video Appointment</Text>
-                                    <Text style={{fontWeight:500, fontSize:10,marginTop:Utils.ScreenHeight(1) }}>8pm-10pm</Text>
+                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor: colors.primary}}></View>
+                                <View style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3), marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
+                                   <View style={{padding:Utils.ScreenHeight(1), marginTop: Utils.ScreenHeight(1), marginBottom: Utils.ScreenHeight(1), marginLeft: Utils.ScreenWidth(2)}}>
+                                    <Text style={{fontWeight:500, fontSize:13, color: colors.primary}}>Vishesh Gatha</Text>
+                                    <Text style={{fontWeight:300, fontSize:11, color: colors.primary}}>Video Appointment</Text>
+                                    <Text style={{fontWeight:500, fontSize:10, marginTop:Utils.ScreenHeight(0), color: colors.primary }}>8pm-10pm</Text>
                                     </View>
-                                    <TouchableOpacity style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
-                                        <Text style={{padding:Utils.ScreenWidth(1) , color:colors.primary, fontWeight:500}}>Connect</Text>
+                                    <TouchableOpacity
+                                    onPress={()=>{navigation.navigate("VideoCall")}}
+                                    style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
+                                        <Text style={{padding:Utils.ScreenWidth(1.5) , color:colors.primary, fontWeight:500}}>Connect</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
+
+                            <View style={{flexDirection:"row", justifyContent:"center",alignItems:"center", marginBottom:Utils.ScreenHeight(2)}} >
+                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor: colors.primary}}></View>
+                                <View style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3), marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
+                                   <View style={{padding:Utils.ScreenHeight(1), marginTop: Utils.ScreenHeight(1), marginBottom: Utils.ScreenHeight(1), marginLeft: Utils.ScreenWidth(2)}}>
+                                    <Text style={{fontWeight:500, fontSize:13, color: colors.primary}}>Vishesh Gatha</Text>
+                                    <Text style={{fontWeight:300, fontSize:11, color: colors.primary}}>Video Appointment</Text>
+                                    <Text style={{fontWeight:500, fontSize:10, marginTop:Utils.ScreenHeight(0), color: colors.primary }}>8pm-10pm</Text>
+                                    </View>
+                                    <TouchableOpacity
+                                    onPress={()=>{navigation.navigate("VideoCall")}}
+                                    style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
+                                        <Text style={{padding:Utils.ScreenWidth(1.5) , color:colors.primary, fontWeight:500}}>Connect</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+
+
                             
 
                        </ScrollView>
@@ -671,75 +687,96 @@ const CalendarScreen = (props) => {
                         <View style={{marginTop:Utils.ScreenHeight(1), marginHorizontal:Utils.ScreenWidth(4)}}>
                        <Text style={{fontSize:18, fontWeight:500, color:colors.primary}}>Todays Schedule</Text>
 
-                       <ScrollView style={{marginTop:Utils.ScreenHeight(2)}}>
+             <ScrollView style={{marginTop:Utils.ScreenHeight(2)}}>
 
-                            <View style={{flexDirection:"row", justifyContent:"center",alignItems:"center", marginBottom:Utils.ScreenHeight(2)}} >
-                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor:colors.primary}}></View>
-                                <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3),marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
-                                   <View style={{padding:Utils.ScreenHeight(1)}}>
-                                    <Text style={{fontWeight:500, fontSize:15}}>Vishesh Gatha</Text>
-                                    <Text style={{fontWeight:300, fontSize:10}}>Video Appointment</Text>
-                                    <Text style={{fontWeight:500, fontSize:10,marginTop:Utils.ScreenHeight(1) }}>8pm-10pm</Text>
+                       <View style={{flexDirection:"row", justifyContent:"center",alignItems:"center", marginBottom:Utils.ScreenHeight(2)}} >
+                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor: colors.primary}}></View>
+                                <View style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3), marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
+                                   <View style={{padding:Utils.ScreenHeight(1), marginTop: Utils.ScreenHeight(1), marginBottom: Utils.ScreenHeight(1), marginLeft: Utils.ScreenWidth(2)}}>
+                                    <Text style={{fontWeight:500, fontSize:13, color: colors.primary}}>Vishesh Gatha</Text>
+                                    <Text style={{fontWeight:300, fontSize:11, color: colors.primary}}>Video Appointment</Text>
+                                    <Text style={{fontWeight:500, fontSize:10, marginTop:Utils.ScreenHeight(0), color: colors.primary }}>8pm-10pm</Text>
                                     </View>
-                                    <TouchableOpacity style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
-                                        <Text style={{padding:Utils.ScreenWidth(1) , color:colors.primary, fontWeight:500}}>Connect</Text>
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-                            <View style={{flexDirection:"row", justifyContent:"center",alignItems:"center", marginBottom:Utils.ScreenHeight(2)}} >
-                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor:colors.primary}}></View>
-                                <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3),marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
-                                   <View style={{padding:Utils.ScreenHeight(1)}}>
-                                    <Text style={{fontWeight:500, fontSize:15}}>Vishesh Gatha</Text>
-                                    <Text style={{fontWeight:300, fontSize:10}}>Video Appointment</Text>
-                                    <Text style={{fontWeight:500, fontSize:10,marginTop:Utils.ScreenHeight(1) }}>8pm-10pm</Text>
-                                    </View>
-                                    <TouchableOpacity style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
-                                        <Text style={{padding:Utils.ScreenWidth(1) , color:colors.primary, fontWeight:500}}>Connect</Text>
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-                            <View style={{flexDirection:"row", justifyContent:"center",alignItems:"center", marginBottom:Utils.ScreenHeight(2)}} >
-                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor:colors.primary}}></View>
-                                <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3),marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
-                                   <View style={{padding:Utils.ScreenHeight(1)}}>
-                                    <Text style={{fontWeight:500, fontSize:15}}>Vishesh Gatha</Text>
-                                    <Text style={{fontWeight:300, fontSize:10}}>Video Appointment</Text>
-                                    <Text style={{fontWeight:500, fontSize:10,marginTop:Utils.ScreenHeight(1) }}>8pm-10pm</Text>
-                                    </View>
-                                    <TouchableOpacity style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
-                                        <Text style={{padding:Utils.ScreenWidth(1) , color:colors.primary, fontWeight:500}}>Connect</Text>
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-                            <View style={{flexDirection:"row", justifyContent:"center",alignItems:"center", marginBottom:Utils.ScreenHeight(2)}} >
-                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor:colors.primary}}></View>
-                                <View style={{flex:1,flexDirection:"row",alignItems:"center",justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3),marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
-                                   <View style={{padding:Utils.ScreenHeight(1)}}>
-                                    <Text style={{fontWeight:500, fontSize:15}}>Vishesh Gatha</Text>
-                                    <Text style={{fontWeight:300, fontSize:10}}>Video Appointment</Text>
-                                    <Text style={{fontWeight:500, fontSize:10,marginTop:Utils.ScreenHeight(1) }}>8pm-10pm</Text>
-                                    </View>
-                                    <TouchableOpacity style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
-                                        <Text style={{padding:Utils.ScreenWidth(1) , color:colors.primary, fontWeight:500}}>Connect</Text>
+                                    <TouchableOpacity
+                                    onPress={()=>{navigation.navigate("VideoCall")}}
+                                    style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
+                                        <Text style={{padding:Utils.ScreenWidth(1.5) , color:colors.primary, fontWeight:500}}>Connect</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
 
-                       </ScrollView>
+                            <View style={{flexDirection:"row", justifyContent:"center",alignItems:"center", marginBottom:Utils.ScreenHeight(2)}} >
+                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor: colors.primary}}></View>
+                                <View style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3), marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
+                                   <View style={{padding:Utils.ScreenHeight(1), marginTop: Utils.ScreenHeight(1), marginBottom: Utils.ScreenHeight(1), marginLeft: Utils.ScreenWidth(2)}}>
+                                    <Text style={{fontWeight:500, fontSize:13, color: colors.primary}}>Vishesh Gatha</Text>
+                                    <Text style={{fontWeight:300, fontSize:11, color: colors.primary}}>Video Appointment</Text>
+                                    <Text style={{fontWeight:500, fontSize:10, marginTop:Utils.ScreenHeight(0), color: colors.primary }}>8pm-10pm</Text>
+                                    </View>
+                                    <TouchableOpacity
+                                    onPress={()=>{navigation.navigate("VideoCall")}}
+                                    style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
+                                        <Text style={{padding:Utils.ScreenWidth(1.5) , color:colors.primary, fontWeight:500}}>Connect</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+
+                             <View style={{flexDirection:"row", justifyContent:"center",alignItems:"center", marginBottom:Utils.ScreenHeight(2)}} >
+                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor: colors.primary}}></View>
+                                <View style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3), marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
+                                   <View style={{padding:Utils.ScreenHeight(1), marginTop: Utils.ScreenHeight(1), marginBottom: Utils.ScreenHeight(1), marginLeft: Utils.ScreenWidth(2)}}>
+                                    <Text style={{fontWeight:500, fontSize:13, color: colors.primary}}>Vishesh Gatha</Text>
+                                    <Text style={{fontWeight:300, fontSize:11, color: colors.primary}}>Video Appointment</Text>
+                                    <Text style={{fontWeight:500, fontSize:10, marginTop:Utils.ScreenHeight(0), color: colors.primary }}>8pm-10pm</Text>
+                                    </View>
+                                    <TouchableOpacity
+                                    onPress={()=>{navigation.navigate("VideoCall")}}
+                                    style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
+                                        <Text style={{padding:Utils.ScreenWidth(1.5) , color:colors.primary, fontWeight:500}}>Connect</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+
+                            <View style={{flexDirection:"row", justifyContent:"center",alignItems:"center", marginBottom:Utils.ScreenHeight(2)}} >
+                                <View style={{height:Utils.ScreenHeight(8), width:Utils.ScreenWidth(2), backgroundColor: colors.primary}}></View>
+                                <View style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"space-between", backgroundColor:colors.secondary, height:Utils.ScreenHeight(8), marginLeft:Utils.ScreenWidth(3), marginRight:Utils.ScreenWidth(2), borderRadius:12}}>
+                                   <View style={{padding:Utils.ScreenHeight(1), marginTop: Utils.ScreenHeight(1), marginBottom: Utils.ScreenHeight(1), marginLeft: Utils.ScreenWidth(2)}}>
+                                    <Text style={{fontWeight:500, fontSize:13, color: colors.primary}}>Vishesh Gatha</Text>
+                                    <Text style={{fontWeight:300, fontSize:11, color: colors.primary}}>Video Appointment</Text>
+                                    <Text style={{fontWeight:500, fontSize:10, marginTop:Utils.ScreenHeight(0), color: colors.primary }}>8pm-10pm</Text>
+                                    </View>
+                                    <TouchableOpacity
+                                    onPress={()=>{navigation.navigate("VideoCall")}}
+                                    style={{marginRight:Utils.ScreenWidth(4), backgroundColor:colors.tertiary,borderRadius:8 }}>
+                                        <Text style={{padding:Utils.ScreenWidth(1.5) , color:colors.primary, fontWeight:500}}>Connect</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+
+                    40 </ScrollView>
                        </View>
 
                         
                       
                     </View>
                 }
-                <TouchableOpacity
-                onPress={()=>{navigation.navigate("AddSchedule")}}
-                style={{
-                    position:"absolute",bottom:Utils.ScreenHeight(1),right:Utils.ScreenWidth(8),
-                    height:Utils.ScreenHeight(6), width:Utils.ScreenHeight(6), backgroundColor:colors.primary,borderRadius:40}}>
-                        <Text style={{textAlign:"center",fontSize:40, color:colors.white }}>+</Text>
-                </TouchableOpacity>
+
+<TouchableOpacity
+  onPress={() => { navigation.navigate("AddSchedule") }}
+  style={{
+    position: "absolute",
+    bottom: Utils.ScreenHeight(1),
+    right: Utils.ScreenWidth(8),
+    height: Utils.ScreenHeight(6),
+    width: Utils.ScreenHeight(6),
+    backgroundColor: colors.primary,
+    borderRadius: 40
+  }}>
+<View style = {{alignItems: 'center', justifyContent: 'center', top: Utils.ScreenHeight(-1)}}>
+  <Text style={{ fontSize: 40, color: colors.white }}>+</Text>
+  </View>
+</TouchableOpacity>
+
                 
             </SafeAreaView>
         </>

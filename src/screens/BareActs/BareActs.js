@@ -11,9 +11,9 @@ const BareActs = () => {
 
   const tableData = [
     ['No.', 'Acts', ' '],
-    ['Row 1 Data 1', 'Row 1 Data 2', 'Row 1 Data 3'],
-    ['Row 2 Data 1', 'Row 2 Data 2', 'Row 2 Data 3'],
-    ['Row 3 Data 1', 'Row 3 Data 2', 'Row 3 Data 3'],
+    ['1', 'Data 1', 'Row 1'],
+    ['2', 'Data 2', 'Row 2'],
+    ['3', 'Data 3', 'Row 3'],
   ];
 
   return (
@@ -43,29 +43,35 @@ const BareActs = () => {
     <View>
       
     </View>
-    <View style = {{ marginTop: Utils.ScreenHeight(3)}}>
-            <View style={{ flexDirection: 'column', marginHorizontal: Utils.ScreenWidth(4)}}>
-            {tableData.map((rowData, rowIndex) => (
-              <View
-                key={rowIndex}
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                  paddingHorizontal: 10,
-                  paddingVertical: 5,
-                  borderWidth: 0.5,
-                  borderColor: colors.primary,
-                  backgroundColor: rowIndex % 2 === 0 ? colors.primary : colors.greyNoti,
-                }}>
-                {rowData.map((cellData, cellIndex) => (
-                  <Text key={cellIndex} style={{ flex: 1 }}>
-                    {cellData}
-                  </Text>
-                ))}
-              </View>
-            ))}
-          </View>
-        </View>
+    <View style={{ marginTop: Utils.ScreenHeight(3) }}>
+  <View style={{ flexDirection: 'column', marginHorizontal: Utils.ScreenWidth(4) }}>
+    {tableData.map((rowData, rowIndex) => (
+      <View
+        key={rowIndex}
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          paddingHorizontal: 10,
+          paddingVertical: 5,
+          borderWidth: 0.5,
+          borderColor: colors.primary,
+          backgroundColor: rowIndex % 2 === 0 ? colors.primary : colors.greyNoti,
+        }}>
+        {rowData.map((cellData, cellIndex) => (
+          <Text
+            key={cellIndex}
+            style={{
+              flex: 1,
+              color: rowIndex % 2 != 0 ? colors.black : colors.primaryText,
+            }}>
+            {cellData}
+          </Text>
+        ))}
+      </View>
+    ))}
+  </View>
+</View>
+
     </ScrollView>
     </SafeAreaView>
   )

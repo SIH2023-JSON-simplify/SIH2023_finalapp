@@ -106,9 +106,6 @@ function OtpScreen(props) {
     const otpInApi = () => {
         if (!otp) {
             Helper.showToast('Please Enter your OTP')
-            
-
-           // Helper.showToast('Please Enter your OTP');
             return;
         }
 
