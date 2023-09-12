@@ -156,7 +156,7 @@ const AddCases = () => {
                                  borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)}}
                         placeholderTextColor={colors.newGrey} placeholder="Select" />
             </View>
-
+ 
             <View style = {{ alignItems: 'center', marginTop: Utils.ScreenHeight(3), marginBottom: Utils.ScreenHeight(2)}}>
             <TouchableOpacity style = {{ backgroundColor: colors.primary,  
                                          borderRadius: 8,
