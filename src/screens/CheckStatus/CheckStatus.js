@@ -233,7 +233,7 @@ const CheckStatus = () => {
       </Modal> */}
 
     {/* <Text onPress={getcaptcha}>kjfdshkj</Text> */}
-        <Modal
+        {/* <Modal
         visible={visible}
         presentationStyle={'pageSheet'}
         animationType={'slide'}
@@ -241,7 +241,7 @@ const CheckStatus = () => {
         <WebView 
         source={{ uri: cap }} 
         />
-    </Modal>
+    </Modal> */}
             
     </SafeAreaView>
   )

@@ -119,7 +119,8 @@ function OtpScreen(props) {
 
         const body ={
             mobile_no : number,
-            otp:otp
+            otp:otp,
+            "action":"login"
         }
         showLoader(true)
         console.log('-----------formdata:: ', body);

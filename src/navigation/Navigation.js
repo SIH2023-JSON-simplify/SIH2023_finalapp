@@ -27,6 +27,7 @@ import caseresults from '../screens/caseresults/caseresults';
 import test from '../screens/test/test';
 import LawyerDetails from '../screens/LawyerDetails/LawyerDetails';
 import BookAppoinment from '../screens/BookAppoinment/BookAppoinment';
+import OCR from '../screens/OCR/OCR';
 
 
 
@@ -39,7 +40,7 @@ function Navigation() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="ClientTabNavigator"
+                initialRouteName="Splash"
                 screenOptions={{ headerShown: false }}>
                  <Stack.Screen name="Splash" component={Splash} />
                 <Stack.Screen name="IntroScreen" component={IntroScreen} />
@@ -67,6 +68,7 @@ function Navigation() {
                 <Stack.Screen name="Verifyotpclient" component={Verifyotpclient} />
                 <Stack.Screen name="LawyerDetails" component={LawyerDetails} />
                 <Stack.Screen name="BookAppoinment" component={BookAppoinment} />
+                <Stack.Screen name="OCR" component={OCR} />
                 <Stack.Screen 
                 options={{ gestureEnabled: false }}
                 name="ClientTabNavigator" component={ClientTabNavigator} />

@@ -53,10 +53,10 @@ function SignInPhone(props) {
         let formdata = new FormData();
         formdata.append('phone', number);
         formdata.append('country_code', '91');
-        formdata.append('action', 'login');
+        // formdata.append('action', 'login');
         const body ={
             "mobile_no": number,
-            "action":   "login",
+            // "action":   "login",
         }
         // showLoader(true)
         console.log('body ', formdata);

@@ -4,6 +4,7 @@ import ImagesPath from '../../assests/ImagesPath'
 import { Utils, colors } from '../../contants'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const Settings = () => {
     const navigation = useNavigation()
@@ -67,9 +68,11 @@ const Settings = () => {
 
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ borderWidth: 0.5, marginTop: Utils.ScreenHeight(2), borderColor: colors.grey2, borderRadius: 6, height: Utils.ScreenHeight(6), justifyContent: "center" }} >
+                        <TouchableOpacity 
+                        onPress={()=>{navigation.navigate("OCR")}}
+                        style={{ borderWidth: 0.5, marginTop: Utils.ScreenHeight(2), borderColor: colors.grey2, borderRadius: 6, height: Utils.ScreenHeight(6), justifyContent: "center" }} >
                             <View style={{ flexDirection: "row", alignItems: "center", marginHorizontal: Utils.ScreenWidth(4), justifyContent: "space-between" }}>
-                                <Text style={{ color: colors.black, fontWeight: '400', fontSize: 16 }}>Staff</Text>
+                                <Text style={{ color: colors.black, fontWeight: '400', fontSize: 16 }}>Get Document Summary </Text>
 
                                 <Image style={{ width: 30, height: 30 }} source={ImagesPath.home.arrow_covered} />
 
@@ -117,7 +120,9 @@ const Settings = () => {
       
     </View>
                     <TouchableOpacity
-                    onPress={()=>{ navigation.reset({
+                    onPress={()=>{
+                        AsyncStorage.clear();
+                        navigation.reset({
                         index: 0,
                         routes: [
                             { name: 'Splash' },
