@@ -25,6 +25,8 @@ import AddCases from '../screens/Cases/AddCases';
 import Uploadtoipfs from '../screens/Uploadtoipfs/Uploadtoipfs';
 import caseresults from '../screens/caseresults/caseresults';
 import test from '../screens/test/test';
+import LawyerDetails from '../screens/LawyerDetails/LawyerDetails';
+import BookAppoinment from '../screens/BookAppoinment/BookAppoinment';
 
 
 
@@ -63,6 +65,8 @@ function Navigation() {
                 <Stack.Screen name="Loginclient" component={Loginclient} />
                 <Stack.Screen name="Signupclient" component={Signupclient} />
                 <Stack.Screen name="Verifyotpclient" component={Verifyotpclient} />
+                <Stack.Screen name="LawyerDetails" component={LawyerDetails} />
+                <Stack.Screen name="BookAppoinment" component={BookAppoinment} />
                 <Stack.Screen 
                 options={{ gestureEnabled: false }}
                 name="ClientTabNavigator" component={ClientTabNavigator} />
