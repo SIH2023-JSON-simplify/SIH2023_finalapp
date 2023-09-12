@@ -34,7 +34,7 @@ function Navigation() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="Cases"
+                initialRouteName="Splash"
                 screenOptions={{ headerShown: false }}>
                  <Stack.Screen name="Splash" component={Splash} />
                 <Stack.Screen name="IntroScreen" component={IntroScreen} />
@@ -44,6 +44,7 @@ function Navigation() {
                 <Stack.Screen name="Notification" component={Notification} />
                 <Stack.Screen name="ClientProfile" component={ClientProfile} />
                 <Stack.Screen name="AddClient1" component={AddClient1} />
+                <Stack.Screen name="AddSchedule" component={AddSchedule} />
                 <Stack.Screen name="VideoCall" component={VideoCall} />
                 <Stack.Screen name="Cases" component={Cases} />
                 <Stack.Screen name="CheckStatus" component={CheckStatus} />
@@ -54,6 +55,7 @@ function Navigation() {
                 <Stack.Screen 
                 options={{ gestureEnabled: false }}
                 name="TabNavigator" component={TabNavigator} />
+                
 
                 {/* Client screens */}
                 <Stack.Screen name="Loginclient" component={Loginclient} />

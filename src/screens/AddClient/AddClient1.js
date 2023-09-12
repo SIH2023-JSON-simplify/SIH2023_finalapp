@@ -60,7 +60,7 @@ const AddClient1 = () => {
                     <TextInput
                         value={name}
                         onChange={(text) => setName(text)}
-                        style={{ height: Utils.ScreenHeight(6), borderColor: colors.newGrey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%', 
+                        style={{ height: Utils.ScreenHeight(6), borderColor: colors.newGrey, color: colors.black, paddingHorizontal: Utils.ScreenWidth(3), width: '93%', 
                                  borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)}}
                         placeholderTextColor={colors.newGrey} placeholder="Enter first name" />
                     </View>
@@ -76,7 +76,8 @@ const AddClient1 = () => {
                     <TextInput
                         value={name}
                         onChange={(text) => setName(text)}
-                        style={{ height: Utils.ScreenHeight(6), borderColor: colors.newGrey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%', 
+                        style={{ height: Utils.ScreenHeight(6), color: colors.black, borderColor: colors.newGrey,
+                                 paddingHorizontal: Utils.ScreenWidth(3), width: '93%', 
                                  borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)}}
                         placeholderTextColor={colors.newGrey} placeholder="Enter last name" />
                   </View>
@@ -109,7 +110,8 @@ const AddClient1 = () => {
                         value={name}
                         onChange={(text) => setName(text)}
                         style={{ height: Utils.ScreenHeight(6), borderColor: colors.newGrey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%', 
-                                 borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)}}
+                                 borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2),
+                                 color: colors.black}}
                         placeholderTextColor={colors.newGrey} placeholder="Enter phone no." />
                   </View>
                 </View>
@@ -125,7 +127,8 @@ const AddClient1 = () => {
                         value={name}
                         onChange={(text) => setName(text)}
                         style={{ height: Utils.ScreenHeight(6), borderColor: colors.newGrey, paddingHorizontal: Utils.ScreenWidth(3), width: '93%', 
-                                 borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2)}}
+                                 borderRadius: 8, borderWidth: Utils.ScreenWidth(0.2),
+                                 color: colors.black}}
                         placeholderTextColor={colors.newGrey} placeholder="DD/MM/YYYY" />
                   </View>
                 </View>

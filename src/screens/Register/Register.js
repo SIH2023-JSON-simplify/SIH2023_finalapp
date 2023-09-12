@@ -6,6 +6,8 @@ import { Utils, colors } from '../../contants'
 import { ScrollView, TextInput } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native';
 import styles from '../Splash/styles'
+import ApiUrl from '../../Lib/ApiUrl'
+import Helper from '../../Lib/Helper'
 
 const Register = () => {
   const navigation = useNavigation();
@@ -21,6 +23,30 @@ const Register = () => {
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
   };
+
+  const data = {
+    "mobile_no": mobNo,
+    "user_type": "advocate",
+    "first_name": fullName,
+    "last_name": fullName,
+    "email": email,
+  }
+
+  const registerUser = async () => {
+    try {
+      const jsonData = JSON.stringify(data);
+    await Helper.makerequest({url: ApiUrl.registerLawyer, data: jsonData, method: 'POST'}).then((data) => {
+      console.log("This is my data" ,data);
+    });
+  
+      console.log('API Response:', response.data);
+
+    } catch (error) {
+      
+      console.error('API Error:', error);
+    }
+  };
+  
 
   return (
     <SafeAreaView>
@@ -249,7 +275,7 @@ const Register = () => {
                                          alignItems: 'center',
                                          justifyContent: 'center',
                                          height: Utils.ScreenHeight(7), 
-                                         width: '92%'}} onPress = {() => { navigation.navigate('SignupLawyer')}}>
+                                         width: '92%'}} onPress = {() => {navigation.navigate('Verifyotp')}}>
                <Text style = {{ color: colors.white, fontWeight: 400, fontSize: 16}}>
                 Continue
                </Text>
