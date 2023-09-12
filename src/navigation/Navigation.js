@@ -22,6 +22,11 @@ import Verifyotpclient from '../screens/Verifyotpclient/Verifyotpclient';
 import ClientTabNavigator from './ClientTabNavigator';
 import Cases from '../screens/Cases/Cases';
 import AddCases from '../screens/Cases/AddCases';
+import Uploadtoipfs from '../screens/Uploadtoipfs/Uploadtoipfs';
+import caseresults from '../screens/caseresults/caseresults';
+import test from '../screens/test/test';
+import LawyerDetails from '../screens/LawyerDetails/LawyerDetails';
+import BookAppoinment from '../screens/BookAppoinment/BookAppoinment';
 
 
 
@@ -34,7 +39,7 @@ function Navigation() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="Splash"
+                initialRouteName="Cases"
                 screenOptions={{ headerShown: false }}>
                  <Stack.Screen name="Splash" component={Splash} />
                 <Stack.Screen name="IntroScreen" component={IntroScreen} />
@@ -48,8 +53,9 @@ function Navigation() {
                 <Stack.Screen name="VideoCall" component={VideoCall} />
                 <Stack.Screen name="Cases" component={Cases} />
                 <Stack.Screen name="CheckStatus" component={CheckStatus} />
-                <Stack.Screen name="AddCases" component={AddCases} />
-                <Stack.Screen name="Register" component={Register} />
+                <Stack.Screen name="Uploadtoipfs" component={Uploadtoipfs} />
+                <Stack.Screen name="caseresults" component={caseresults} />
+                <Stack.Screen name="test" component={test} />
                 <Stack.Screen
                 name="Settings" component={Settings} />
                 <Stack.Screen 
@@ -61,6 +67,8 @@ function Navigation() {
                 <Stack.Screen name="Loginclient" component={Loginclient} />
                 <Stack.Screen name="Signupclient" component={Signupclient} />
                 <Stack.Screen name="Verifyotpclient" component={Verifyotpclient} />
+                <Stack.Screen name="LawyerDetails" component={LawyerDetails} />
+                <Stack.Screen name="BookAppoinment" component={BookAppoinment} />
                 <Stack.Screen 
                 options={{ gestureEnabled: false }}
                 name="ClientTabNavigator" component={ClientTabNavigator} />
