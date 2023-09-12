@@ -20,9 +20,13 @@ import Signupclient from '../screens/Signupclient/Signupclient';
 import Loginclient from '../screens/Loginclient/Loginclient';
 import Verifyotpclient from '../screens/Verifyotpclient/Verifyotpclient';
 import ClientTabNavigator from './ClientTabNavigator';
+import Cases from '../screens/Cases/Cases';
+import AddCases from '../screens/Cases/AddCases';
 import Uploadtoipfs from '../screens/Uploadtoipfs/Uploadtoipfs';
-import test from '../screens/test/test';
 import caseresults from '../screens/caseresults/caseresults';
+import test from '../screens/test/test';
+import LawyerDetails from '../screens/LawyerDetails/LawyerDetails';
+import BookAppoinment from '../screens/BookAppoinment/BookAppoinment';
 
 
 
@@ -46,6 +50,7 @@ function Navigation() {
                 <Stack.Screen name="ClientProfile" component={ClientProfile} />
                 <Stack.Screen name="AddClient1" component={AddClient1} />
                 <Stack.Screen name="VideoCall" component={VideoCall} />
+                <Stack.Screen name="Cases" component={Cases} />
                 <Stack.Screen name="CheckStatus" component={CheckStatus} />
                 <Stack.Screen name="Uploadtoipfs" component={Uploadtoipfs} />
                 <Stack.Screen name="caseresults" component={caseresults} />
@@ -60,6 +65,8 @@ function Navigation() {
                 <Stack.Screen name="Loginclient" component={Loginclient} />
                 <Stack.Screen name="Signupclient" component={Signupclient} />
                 <Stack.Screen name="Verifyotpclient" component={Verifyotpclient} />
+                <Stack.Screen name="LawyerDetails" component={LawyerDetails} />
+                <Stack.Screen name="BookAppoinment" component={BookAppoinment} />
                 <Stack.Screen 
                 options={{ gestureEnabled: false }}
                 name="ClientTabNavigator" component={ClientTabNavigator} />
