@@ -219,7 +219,7 @@ function TabNavigator() {
                             <RenderTabIcon
                                 title="Bare Acts"
                                 isFocused={focused}
-                                activeIcon={ImagesPath.home.man_icon}
+                                activeIcon={ImagesPath.LegalBridge.Icon}
                             // inActiveIcon={ImagesPath.Tabbar.bottom_k}
                             // title={"Katlego"}
                             />
@@ -276,7 +276,7 @@ function TabNavigator() {
                             <RenderTabIcon
                                 title="Clients"
                                 isFocused={focused}
-                                activeIcon={ImagesPath.home.wallet_icon}
+                                activeIcon={ImagesPath.home.man_icon}
                             // inActiveIcon={ImagesPath.Tabbar.bottom_k}
                             // title={"Katlego"}
                             />

@@ -9,36 +9,38 @@ import { useNavigation } from '@react-navigation/native'
 const HomeScreen = () => {
     const navigation = useNavigation();
     const data = [
-        { id: '1' },
-        { id: '2' },
-        { id: '3' },
+        { id: '1',image:ImagesPath.LegalBridge.court1 },
+        { id: '2',image:ImagesPath.LegalBridge.c5 },
+        { id: '3',image:ImagesPath.LegalBridge.c6 },
+        
     ];
 
     const latestdata = [
-        { id: '1', header: "Supreme Court", title: "Supreme Court Upholds Disciplinary Action Against ...", duration: "15 min ago" },
-        { id: '2', header: "Supreme Court", title: "Supreme Court Upholds Disciplinary Action Against ...", duration: "15 min ago" },
-        { id: '3', header: "Supreme Court", title: "Supreme Court Upholds Disciplinary Action Against ...", duration: "15 min ago" },
-        { id: '4', header: "Supreme Court", title: "Supreme Court Upholds Disciplinary Action Against ...", duration: "15 min ago" },
+        { id: '1', header: "Supreme Court", title: "Supreme Court Upholds Disciplinary Action Against ...", duration: "15 min ago", image:ImagesPath.LegalBridge.c1 },
+        { id: '2', header: "News Updates", title: "Preventing Multiplicity And Streamlining Processes For ...", duration: "30 min ago" ,image:ImagesPath.LegalBridge.c2 },
+        { id: '3', header: "High Court", title: "Gujarat High Court Weekly Round-Up: August 28 To ...", duration: "45 min ago",image:ImagesPath.LegalBridge.c3 },
+        { id: '4', header: "Supreme Court", title: "Manipur Violence | Following Supreme Court's Direction ...", duration: "50 min ago" ,image:ImagesPath.LegalBridge.c4},
         
 
     ];
     const [searchText, setSearchtext] = useState("")
     const trending = ({ item }) => {
         return (
-            <TouchableOpacity>
-                <Image source={ImagesPath.LegalBridge.court1}
-                    style={{ width: Utils.ScreenWidth(82), height: Utils.ScreenHeight(19), resizeMode: "contain" }} />
+            <TouchableOpacity style={{}}>
+                <Image source={item.image}
+                    style={{ width: Utils.ScreenWidth(82), borderRadius:20,height: Utils.ScreenHeight(19), resizeMode: "contain" }} />
             </TouchableOpacity>
 
 
         )
     }
     const latest = ({ item }) => {
+        const temp = item.image
         return (
             <TouchableOpacity>
                 <View style={{flexDirection:"row", marginBottom:Utils.ScreenHeight(1)}}>
                     <View>
-                        <Image source={ImagesPath.LegalBridge.court2}
+                        <Image source={item.image}
                             style={{ width: Utils.ScreenWidth(25), height: Utils.ScreenHeight(10), resizeMode: "contain" }} />
                     </View>
                     <View style={{flex:1, justifyContent:"space-evenly"}}>
